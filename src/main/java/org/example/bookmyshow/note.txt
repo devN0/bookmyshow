@@ -1,0 +1,10 @@
+1) Don't make repository classes directly instead make repository interfaces this will allow us to change the type of DB in
+   future(inMemory, MySQL, PostgreSQL, MongoDB etc.) without breaking our services as for all these interfaces we'd be having
+   implementations based on the type of DB we want to use.
+2) In this codebase we've used in memory DB(simply created hashmaps for tables/indexes).
+
+3) Since typically for a Show based on the SeatType, price is calculated. So we can save up some space by storing price for every SeatType
+   in ShowSeatType instead of storing price for every seat in ShowSeat.
+
+4) #1st task - createBooking
+    BookingController, BookingService, BookingRepository
